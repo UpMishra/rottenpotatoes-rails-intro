@@ -15,6 +15,11 @@ class MoviesController < ApplicationController
     # else
     #   @movie = Movie.all
     # end
+    if params[:sort]
+      @movies = Movie.order(params[:sort])
+    else
+      @movies = Movie.all
+    end
   end
 
   def new
