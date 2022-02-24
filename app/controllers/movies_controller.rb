@@ -12,6 +12,8 @@ class MoviesController < ApplicationController
     @sort = params[:sort] 
     if @sort
       @movie = Movie.order(@sort)
+    else
+      @movie = Movie.all
     end
   end
 
