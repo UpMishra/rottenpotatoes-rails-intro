@@ -13,6 +13,7 @@ class MoviesController < ApplicationController
 
     @movies = Movie.all
     @sort=params[:sort]
+    
     if @sort
       
       @movies = @movies.where(rating: @ratings).order(@sort)
